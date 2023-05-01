@@ -3,6 +3,8 @@ FROM mcr-remote.artefacts.devsecops.aemo.com.au/dotnet/aspnet:6.0-alpine3.17
 # FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
 WORKDIR /app
+COPY . .
+RUN apk add --no-cache icu-libs tzdata
 
 COPY requirements.txt /app
 RUN --mount=type=cache,target=/root/.cache/pip \
