@@ -63,4 +63,4 @@ Stop and remove the containers
 $ docker compose down
 ```
 
-dummy1
+dummy2
