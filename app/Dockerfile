@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
+FROM mcr-remote.artefacts.devsecops.aemo.com.au/dotnet/aspnet:6.0-alpine3.17
+# FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
 
 WORKDIR /app
 
@@ -25,5 +26,3 @@ adduser -S --shell /bin/bash --ingroup docker vscode
 EOF
 # install Docker tools (cli, buildx, compose)
 COPY --from=gloursdocker/docker / /
-
-# //NOSONAR
